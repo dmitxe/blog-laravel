@@ -16,6 +16,8 @@
 
         <title>@yield('title', 'Laravel')</title>
 
+        <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
