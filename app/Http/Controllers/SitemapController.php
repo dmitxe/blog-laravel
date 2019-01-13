@@ -29,6 +29,16 @@ class SitemapController extends Controller
             $sitemap->add(route('page', ['slug' =>$page->slug]), $page->updated_at, '0.5', 'yearly');
         }
 
+        $sitemap->add(URL::to('/news'), Date::now(), '1.0', 'monthly');
+
+
+        $news = DB::table('news')->orderBy('created_at', 'desc')->get();
+
+        foreach ($news as $model)
+        {
+            $sitemap->add(route('news.show', ['slug' =>$model->slug]), $model->updated_at, '0.5', 'yearly');
+        }
+
         $articles = DB::table('posts')->orderBy('created_at', 'desc')->get();
 
         foreach ($articles as $article)

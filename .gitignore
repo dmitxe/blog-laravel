@@ -12,6 +12,7 @@ nbproject
 # windows thumbnail cache
 Thumbs.db
 
+/sitemap.xml
 /node_modules
 /public/hot
 /public/storage
