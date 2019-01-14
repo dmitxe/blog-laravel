@@ -1,8 +1,12 @@
 @extends('layout')
 @section('breadcrumbs', Breadcrumbs::render('news', $model))
-@section('title')
-    <?= $model->title ?>
-@endsection
+@section('title', $model->title)
+@if (!empty($model->meta_description))
+    @section('description', $model->meta_description)
+@endif
+@if (!empty($model->meta_keywords))
+    @section('keywords', $model->meta_keywords)
+@endif
 
 @section('content')
     <h1>{{ $model->title }}</h1>

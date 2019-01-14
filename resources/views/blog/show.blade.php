@@ -1,8 +1,12 @@
 @extends('layout')
 @section('breadcrumbs', Breadcrumbs::render('post', $article))
-@section('title')
-    {{ $article->title }}
-@endsection
+@section('title', $article->title)
+@if (!empty($article->meta_description))
+    @section('description', $article->meta_description)
+@endif
+@if (!empty($article->meta_keywords))
+    @section('keywords', $article->meta_keywords)
+@endif
 @section('content')
 
     <h2>{{ $article->title }}</h2>

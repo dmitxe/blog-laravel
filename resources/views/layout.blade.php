@@ -16,6 +16,14 @@
 
         <title>@yield('title', 'Laravel')</title>
 
+        @if (trim($__env->yieldContent('description')))
+            <meta name="description" content="@yield('description')">
+        @endif
+
+        @if (trim($__env->yieldContent('keywords')))
+            <meta name="keywords" content="@yield('keywords')">
+        @endif
+
         <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
 
         <!-- Fonts -->
