@@ -9,6 +9,7 @@ use App\Admin;
 
 class ContactController extends Controller
 {
+    public $secretToken = 'sddjf3858ghdkifdklgds';
     public function show()
     {
         return view('contact');
@@ -16,9 +17,13 @@ class ContactController extends Controller
 
     public function mailToAdmin(ContactFormRequest $message, Admin $admin)
     {
-        //send the admin an notification
-        $admin->notify(new InboxMessage($message));
-        // redirect the user back
-        return redirect()->back()->with('message', 'Спасибо за обращение! Ваше сообщение успешно отправлено администратору сайта!');
+        if (isset($_POST['mail-token']) && $this->secretToken == $_POST['mail-token']) {
+            //send the admin an notification
+            $admin->notify(new InboxMessage($message));
+            // redirect the user back
+            return redirect()->back()->with('message', 'Спасибо за обращение! Ваше сообщение успешно отправлено администратору сайта!');
+        } else {
+            return redirect()->back()->with('message-fail', 'Не удалось отправить письмо. Вы не прошли защиту от спама!');
+        }
     }
 }

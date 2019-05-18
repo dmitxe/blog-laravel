@@ -14,8 +14,14 @@
             </div>
         @endif
 
+        @if(session('message-fail'))
+            <div class='alert alert-danger'>
+                {{ session('message-fail') }}
+            </div>
+        @endif
+
         <div class="col-12 col-md-6">
-            <form class="form-horizontal" method="POST" action="/contact">
+            <form id="contact-form" class="form-horizontal" method="POST" action="/contact">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="name">Имя: </label>
@@ -37,10 +43,20 @@
                     <textarea type="text" class="form-control luna-message" id="message" placeholder="Текст письма" name="message" required></textarea>
                 </div>
 
+                <input id="mail-token" type="hidden" name="mail-token" value="">
+
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary" value="Send">Отправить</button>
+                    <button id="btn-submit" type="button" class="btn btn-primary" value="Send">Отправить</button>
                 </div>
             </form>
         </div>
     </div> <!-- /container -->
+
+
+<script type="text/javascript">
+    $('#btn-submit').click(function () {
+        $('#mail-token').val('sddjf3858ghdkifdklgds');
+        $('#contact-form')[0].submit();
+    })
+</script>
 @endsection

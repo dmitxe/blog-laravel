@@ -32,7 +32,7 @@ Breadcrumbs::for('post', function ($breadcrumbs, $post) {
 
 // Home > Blog > Archive
 Breadcrumbs::for('archive', function ($breadcrumbs, $title, $year, $month) {
-    $breadcrumbs->parent('blog');
+    $breadcrumbs->parent('home');
     $breadcrumbs->push($title, route('blog.archive', ['year' => $year, 'month' => $month]));
 });
 
@@ -41,14 +41,14 @@ Breadcrumbs::for('category', function ($trail, $category) {
     if ($category->parentId) {
         $trail->parent('category', $category->parentId);
     } else {
-        $trail->parent('blog');
+        $trail->parent('home');
     }
     $trail->push($category->name, route('blog.category', $category->slug));
 });
 
 // Home > Blog > Tag
 Breadcrumbs::for('tag', function ($breadcrumbs, $tag) {
-    $breadcrumbs->parent('blog');
+    $breadcrumbs->parent('home');
     $breadcrumbs->push('Статьи с тэгом '.$tag->title, route('blog.tag', ['slug' => $tag->slug]));
 });
 
