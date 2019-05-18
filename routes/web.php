@@ -22,7 +22,9 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('page/{slug}', 'PageController@show');
 
-Auth::routes();
+Auth::routes([
+    'register' => false, // Registration Routes...
+]);
 
 Route::get('/', 'HomeController@index')->name('home');
 
