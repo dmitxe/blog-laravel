@@ -29,7 +29,7 @@
 
     <div>&nbsp;&nbsp;</div>
     <h4>Поделиться статьей с друзьями: </h4>
-    <script type="text/javascript">(function() {
+    <!--<script type="text/javascript">(function() {
             if (window.pluso)if (typeof window.pluso.start == "function") return;
             if (window.ifpluso==undefined) { window.ifpluso = 1;
                 var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
@@ -39,6 +39,10 @@
                 h.appendChild(s);
             }})();</script>
     <div class="pluso" data-background="#ebebeb" data-options="medium,square,line,horizontal,counter,theme=04" data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir,email,print"></div>
+    -->
+    <script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+    <script src="https://yastatic.net/share2/share.js"></script>
+    <div class="ya-share2" data-services="collections,vkontakte,facebook,odnoklassniki,moimir,twitter,blogger,linkedin,lj,telegram"></div>
 
     <div>&nbsp;&nbsp;</div>
     @widget('AdsWidget', ['position' => 'bottom'])
