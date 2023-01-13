@@ -214,6 +214,7 @@ return [
     ],
 
     'additional_js' => [
+        'js/custom_editor.js'
         //'js/custom.js',
     ],
 

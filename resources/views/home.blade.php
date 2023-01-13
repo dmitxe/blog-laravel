@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'Dmitry Xe\'s Personal Site')
+@section('title', 'Блог веб-программиста')
 @section('breadcrumbs', Breadcrumbs::render('home'))
 @section('content')
 

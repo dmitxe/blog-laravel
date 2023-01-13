@@ -144,7 +144,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                        @2011 - {{ date('Y') }} Дмитрий Хе. Все права защищены.
+                        @2011 - {{ date('Y') }} dmitxe.ru. Все права защищены.
                 </div>
             </div>
         </div>
