@@ -2,7 +2,7 @@
 
 namespace App\Widgets;
 
-use App\Tag;
+use App\Models\Tag;
 use Arrilot\Widgets\AbstractWidget;
 use Illuminate\Support\Facades\DB;
 

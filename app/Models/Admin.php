@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Models;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
+
+class Admin extends Model
+{
+    use Notifiable;
+
+    protected $admin;
+    protected $email;
+
+    public function __construct() {
+        $this->admin = config('admin.name');
+        $this->email = config('admin.email');
+    }
+	
+    /**
+     * Для уведомлений по email
+     */
+    public function routeNotificationForMail()
+    {
+        return $this->email; // email из настроек или из базы
+    }	
+}

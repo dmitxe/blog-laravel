@@ -29,11 +29,11 @@ class ArchiveWidget extends AbstractWidget
                  ->orderBy('year', 'desc')
                  ->orderBy('month', 'desc')
                  ->limit(24);*/
-        $query = "SELECT created_at, MONTH(created_at) as month, YEAR (created_at) as year
-				FROM posts as p
+        $query = "SELECT MAX(created_at) as created_at, MONTH(created_at) as `month`, YEAR (created_at) as `year`
+				FROM posts
 				WHERE status = 'PUBLISHED'
-				GROUP BY year, month				
-				ORDER BY year desc, month desc
+				GROUP BY `year`, `month`				
+				ORDER BY `year` desc, `month` desc
 				LIMIT ? ";
 
 

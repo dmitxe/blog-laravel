@@ -2,41 +2,24 @@
 
 namespace App\Providers;
 
-use App\Observers\Post_tagObserver;
-use App\Observers\PostObserver;
-use App\Post_tag;
-use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Schema;
-use TCG\Voyager\Models\Post;
+use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap any application services.
-     *
-     * @return void
+     * Register any application services.
      */
-    public function boot()
+    public function register(): void
     {
-        Schema::defaultStringLength(191);
-        setlocale(LC_ALL, 'ru_RU.UTF-8');
-        Carbon::setLocale(config('app.locale'));
-
-      //  Post::observe(PostObserver::class);
-     //   Post_tag::observe(Post_tagObserver::class);
         //
     }
 
     /**
-     * Register any application services.
-     *
-     * @return void
+     * Bootstrap any application services.
      */
-    public function register()
+    public function boot(): void
     {
-        $this->app->bind('path.public', function() {
-            return realpath(base_path() . '/web');
-        });
+        Paginator::useBootstrap();
     }
 }

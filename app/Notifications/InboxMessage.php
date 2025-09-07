@@ -47,7 +47,7 @@ class InboxMessage extends Notification
             ->subject(config('admin.name') . ", новое сообщение с сайта dmitxe.ru!")
             ->greeting(" ")
             ->salutation(" ")
-            ->from(config('mail.username'), 'no-reply')
+            ->from(config('mail.from.address'), 'no-reply')
             ->line('Тема письма: ' . $this->message->subject)
             ->line('Имя: ' . $this->message->name)
             ->line('E-mail: ' . $this->message->email)

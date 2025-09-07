@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Notifications\InboxMessage;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactFormRequest;
-use App\Admin;
+use App\Models\Admin;
 
 class ContactController extends Controller
 {
@@ -19,6 +19,7 @@ class ContactController extends Controller
     {
         if (isset($_POST['mail-token']) && $this->secretToken == $_POST['mail-token']) {
             //send the admin an notification
+			//var_dump($admin); exit;
             $admin->notify(new InboxMessage($message));
             // redirect the user back
             return redirect()->back()->with('message', 'Спасибо за обращение! Ваше сообщение успешно отправлено администратору сайта!');
