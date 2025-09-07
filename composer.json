@@ -13,6 +13,7 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
+        "rumenx/php-sitemap": "^1.0",
         "tcg/voyager": "dev-1.6-l10"
     },
     "require-dev": {

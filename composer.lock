@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9262cf549b45c177c7046e3765a60bd3",
+    "content-hash": "485e5346908d04faf924b2dd6f088ce4",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -3864,6 +3864,68 @@
                 "source": "https://github.com/ramsey/uuid/tree/4.9.1"
             },
             "time": "2025-09-04T20:59:21+00:00"
+        },
+        {
+            "name": "rumenx/php-sitemap",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RumenDamyanov/php-sitemap.git",
+                "reference": "3ee1ce7607f7abec8a58ce0d2736e1e9cf638e2e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RumenDamyanov/php-sitemap/zipball/3ee1ce7607f7abec8a58ce0d2736e1e9cf638e2e",
+                "reference": "3ee1ce7607f7abec8a58ce0d2736e1e9cf638e2e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2"
+            },
+            "require-dev": {
+                "orchestra/testbench-core": "^8.0",
+                "pestphp/pest": "^2.0",
+                "php-coveralls/php-coveralls": "^2.2",
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^10.0",
+                "squizlabs/php_codesniffer": "^3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rumenx\\Sitemap\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rumen Damyanov",
+                    "email": "contact@rumenx.com",
+                    "homepage": "https://rumenx.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Framework-agnostic Sitemap generator for PHP, Laravel, and Symfony.",
+            "homepage": "https://github.com/RumenDamyanov/php-sitemap",
+            "keywords": [
+                "Sitemap",
+                "generator",
+                "google-news",
+                "html",
+                "laravel",
+                "php",
+                "symfony",
+                "xml"
+            ],
+            "support": {
+                "issues": "https://github.com/RumenDamyanov/php-sitemap/issues",
+                "source": "https://github.com/RumenDamyanov/php-sitemap",
+                "wiki": "https://github.com/RumenDamyanov/php-sitemap/wiki"
+            },
+            "time": "2025-07-29T06:22:21+00:00"
         },
         {
             "name": "symfony/console",

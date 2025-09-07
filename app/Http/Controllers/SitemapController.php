@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Jenssegers\Date\Date;
-use Laravelium\Sitemap\Sitemap;
+//use Laravelium\Sitemap\Sitemap;
 
 use Illuminate\Support\Facades\DB;
 
@@ -13,11 +13,13 @@ use Illuminate\Support\Facades\App;
 
 use Illuminate\Support\Facades\URL;
 
+use Rumenx\Sitemap\Sitemap;
+
 class SitemapController extends Controller
 {
-    public function index() {
 
-        $sitemap = App::make("sitemap");
+	public function sitemap(Sitemap $sitemap) {
+        //$sitemap = App::make("sitemap");
 
         $sitemap->add(URL::to('/'), Date::now(), '1.0', 'monthly');
 
@@ -26,7 +28,7 @@ class SitemapController extends Controller
 
         foreach ($pages as $page)
         {
-            $sitemap->add(route('page', ['slug' =>$page->slug]), $page->updated_at, '0.5', 'yearly');
+            $sitemap->add(route('page', ['page' =>$page->slug]), $page->updated_at, '0.5', 'yearly');
         }
 
         $sitemap->add(URL::to('/news'), Date::now(), '1.0', 'monthly');
@@ -36,7 +38,7 @@ class SitemapController extends Controller
 
         foreach ($news as $model)
         {
-            $sitemap->add(route('news.show', ['slug' =>$model->slug]), $model->updated_at, '0.5', 'yearly');
+            $sitemap->add(route('news.show', ['news' =>$model->slug]), $model->updated_at, '0.5', 'yearly');
         }
 
         $articles = DB::table('posts')->orderBy('created_at', 'desc')->get();
@@ -60,7 +62,10 @@ class SitemapController extends Controller
             $sitemap->add(route('blog.tag', ['slug' =>$tag->slug]), $tag->updated_at, '0.5', 'yearly');
         }
 
-        $sitemap->store('xml', 'sitemap');
+        //$sitemap->store('xml', 'sitemap');
+		$items = $sitemap->getModel()->getItems();
+		return response()->view('sitemap.sitemap', compact('items'), 200, ['Content-Type' => 'application/xml']);
+
 
     }
 }

@@ -47,4 +47,5 @@ Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 Route::get('/news/{news}.html', [NewsController::class, 'show'])->name('news.show');
 
 // Sitemap
-Route::get('sitemap', [SitemapController::class, 'index']); 
+//Route::get('sitemap', [SitemapController::class, 'index']); 
+Route::get('/sitemap.xml', [SitemapController::class, 'sitemap']);
