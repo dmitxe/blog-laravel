@@ -8,7 +8,7 @@
 
      @foreach ($models as $model)
 
-         <h2><a href="{{  route('news.show', ['slug' => $model->slug]) }}">{{ $model->title }}</a></h2>
+         <h2><a href="{{  route('news.show', ['news' => $model->slug]) }}">{{ $model->title }}</a></h2>
          <?php $data = new Jenssegers\Date\Date($model->created_at);?>
          <p><b>{{  $data->format('l, j F Y H:i:s') }}</b></p>
          <p>{!! nl2br($model->excerpt) !!} </p>
