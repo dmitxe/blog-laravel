@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\News;
+use App\Models\News;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
 
